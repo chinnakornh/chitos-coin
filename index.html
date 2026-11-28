@@ -1,1101 +1,4435 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Official Chitos Coin (CHTC) project information, BNB Smart Chain Mainnet contract, tokenomics, vesting and AI ecosystem.">
-<meta name="theme-color" content="#091321">
-<meta property="og:title" content="Chitos Coin | CHTC">
-<meta property="og:description" content="Community culture. AI ambition. Deployed on BNB Smart Chain Mainnet.">
-<meta property="og:image" content="https://chinnakornh.github.io/chitos-coin/chitos-banner.webp">
-<meta property="og:url" content="https://chinnakornh.github.io/chitos-coin/">
-<meta property="og:type" content="website">
-<link rel="icon" href="chitos-logo.webp" type="image/webp">
-<title>Chitos Coin | CHTC</title>
 
-<style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:#091321;
-  color:#eaf4ff;
-  font:16px/1.65 system-ui,sans-serif
-}
-main,nav,footer{
-  max-width:1120px;
-  margin:auto;
-  padding:24px
-}
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:16px
-}
-nav a{margin-right:15px}
-a{color:#8ce8d5;text-decoration:none}
-a:hover{text-decoration:underline}
-section{
-  padding:52px 0;
-  border-bottom:1px solid #26364b
-}
-h1{
-  font-size:clamp(48px,8vw,94px);
-  line-height:1.03;
-  margin:20px 0;
-  letter-spacing:-.06em
-}
-h2{font-size:34px;line-height:1.2}
-h3{margin-top:0}
-p{color:#b9c9db;max-width:850px}
-.hero{
-  background:radial-gradient(
-    ellipse at 85% 20%,
-    #174b50,
-    transparent 60%
-  );
-  padding:24px 0 60px
-}
-.tag{
-  color:#8ce8d5;
-  letter-spacing:.15em;
-  font-size:13px
-}
-.btn{
-  display:inline-block;
-  background:#8ce8d5;
-  color:#091321;
-  padding:12px 20px;
-  border-radius:9px;
-  font-weight:700;
-  margin:8px 8px 8px 0;
-  border:0;
-  cursor:pointer;
-  font-family:inherit;
-  font-size:14px
-}
-.btn-secondary{
-  background:#172b3d;
-  color:#8ce8d5;
-  border:1px solid #36576b
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:16px
-}
-article,.stat,.contract-box{
-  background:#111f31;
-  border:1px solid #2a3c51;
-  border-radius:16px;
-  padding:24px
-}
-.stat strong{
-  display:block;
-  font-size:32px;
-  color:#8ce8d5
-}
-.bar{
-  display:flex;
-  height:22px;
-  border-radius:8px;
-  overflow:hidden;
-  margin:25px 0
-}
-.bar span{display:block}
-.scroll{overflow-x:auto}
-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:650px
-}
-td,th{
-  text-align:left;
-  padding:12px;
-  border-bottom:1px solid #29394d
-}
-th{color:#8ce8d5}
-footer{
-  color:#a9b9cc;
-  font-size:14px
-}
-code{
-  overflow-wrap:anywhere;
-  word-break:break-word
-}
-.notice{
-  border-left:3px solid #e9b86b;
-  padding-left:16px
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  color:#eaf4ff
-}
-.brand img{
-  width:48px;
-  height:48px;
-  border-radius:50%
-}
-.banner{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:16px;
-  border:1px solid #285365;
-  margin:0 0 28px
-}
-.social a{
-  display:inline-block;
-  margin-top:8px
-}
-.social article{
-  border-top:2px solid #8ce8d5
-}
-.status{
-  display:inline-block;
-  padding:5px 12px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:700;
-  margin:4px 5px 4px 0
-}
-.status-live{
-  color:#8ce8d5;
-  background:#123b36;
-  border:1px solid #286357
-}
-.status-pending{
-  color:#e9b86b;
-  background:#332b20;
-  border:1px solid #695334
-}
-.contract-box{margin:25px 0}
-.contract-address{
-  display:block;
-  background:#091321;
-  border:1px solid #263e53;
-  border-radius:9px;
-  padding:15px;
-  color:#8ce8d5;
-  font-size:15px;
-  margin:12px 0
-}
-.small{
-  font-size:13px;
-  color:#a9b9cc
-}
-.check{
-  color:#8ce8d5;
-  font-weight:700
-}
-.pending{color:#e9b86b}
-.status-list{
-  list-style:none;
-  padding:0;
-  margin:16px 0
-}
-.status-list li{
-  padding:8px 0;
-  border-bottom:1px solid #26364b
-}
-a:focus-visible,button:focus-visible{
-  outline:2px solid #8ce8d5;
-  outline-offset:4px
-}
-@media(max-width:520px){
-  main,nav,footer{padding:16px}
-  .grid{grid-template-columns:1fr}
-  nav a{
-    display:inline-block;
-    margin-bottom:6px
-  }
-  h1{font-size:48px}
-  .contract-address{font-size:12px}
-}
-</style>
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <meta name="description"
+          content="Chitos Coin (CHTC) on BNB Smart Chain. Explore tokenomics, AI utility, vesting schedules and on-chain transparency.">
+
+    <meta name="theme-color" content="#091321">
+
+    <link rel="icon"
+          href="chitos-logo.webp"
+          type="image/webp">
+
+    <title>Chitos Coin | CHTC | AI & Community</title>
+
+    <style>
+
+        /* =========================================
+           CHITOS COIN MAINNET V1.1
+           GLOBAL DESIGN SYSTEM
+           ========================================= */
+
+        :root {
+            --background: #091321;
+            --surface: #111f31;
+            --border: #2a3c51;
+            --text: #eaf4ff;
+            --muted: #b9c9db;
+            --accent: #8ce8d5;
+            --green: #319e8e;
+            --gold: #e9b86b;
+            --blue: #56a7d9;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font: 16px/1.65 system-ui, sans-serif;
+        }
+
+        main,
+        nav,
+        footer {
+            max-width: 1120px;
+            margin: auto;
+            padding: 24px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        section {
+            padding: 52px 0;
+            border-bottom: 1px solid #26364b;
+            scroll-margin-top: 20px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 94px);
+            line-height: 1.03;
+            margin: 20px 0;
+            letter-spacing: -.06em;
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 36px);
+            line-height: 1.2;
+            margin: 12px 0 22px;
+        }
+
+        h3 {
+            margin-top: 0;
+            line-height: 1.4;
+        }
+
+        p {
+            color: var(--muted);
+            max-width: 850px;
+        }
+
+        code {
+            overflow-wrap: anywhere;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+        }
+
+        .brand img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+        }
+
+        /* =========================================
+           HERO
+           ========================================= */
+
+        .hero {
+            background: radial-gradient(
+                ellipse at 85% 20%,
+                #174b50,
+                transparent 60%
+            );
+            padding: 24px 0 60px;
+        }
+
+        .banner {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            border: 1px solid #285365;
+            margin: 0 0 28px;
+        }
+
+        .tag {
+            color: var(--accent);
+            letter-spacing: .15em;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #30645c;
+            background: rgba(49,158,142,.10);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--background);
+            padding: 12px 20px;
+            border-radius: 9px;
+            font-weight: 700;
+            margin: 8px 8px 8px 0;
+            border: 1px solid var(--accent);
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #b2f4e6;
+            text-decoration: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid #38675f;
+        }
+
+        .btn-outline:hover {
+            background: #174b50;
+        }
+
+        .notice {
+            border-left: 3px solid var(--gold);
+            padding: 12px 16px;
+            background: rgba(233,184,107,.04);
+            font-size: 14px;
+            max-width: none;
+        }
+
+        /* =========================================
+           GENERAL CARDS AND TABLES
+           ========================================= */
+
+        .grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+
+        article,
+        .stat,
+        .panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            min-width: 0;
+        }
+
+        .panel {
+            margin: 20px 0;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: clamp(24px, 3vw, 32px);
+            color: var(--accent);
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .stat span {
+            display: block;
+            font-size: 14px;
+        }
+
+        .small {
+            color: #a9b9cc;
+            font-size: 13px;
+        }
+
+        .scroll {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        td,
+        th {
+            text-align: left;
+            padding: 14px 12px;
+            border-bottom: 1px solid #29394d;
+            font-size: 14px;
+        }
+
+        th {
+            color: var(--accent);
+        }
+
+        tfoot {
+            font-weight: 700;
+        }
+
+        /* =========================================
+           TOKENOMICS
+           ========================================= */
+
+        .bar {
+            display: flex;
+            height: 24px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 25px 0;
+            background: #26364b;
+        }
+
+        .bar span {
+            display: block;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px 20px;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+
+        .legend-dot {
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            border-radius: 3px;
+            margin-right: 6px;
+        }
+
+        /* =========================================
+           DEPLOYMENT STATUS
+           ========================================= */
+
+        .status-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .status-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #26364b;
+        }
+
+        .status-list li:last-child {
+            border-bottom: none;
+        }
+
+        .status-ok {
+            color: var(--accent);
+            font-weight: 700;
+            margin-right: 7px;
+        }
+
+        .status-pending {
+            color: var(--gold);
+            margin-right: 7px;
+        }
+
+        /* =========================================
+           CONTRACT ADDRESS
+           ========================================= */
+
+        .address {
+            display: block;
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px;
+            font-size: 13px;
+            overflow-wrap: anywhere;
+            word-break: break-all;
+            user-select: all;
+            color: var(--accent);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .small-btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid #3a625f;
+            border-radius: 8px;
+            padding: 8px 13px;
+            font: inherit;
+            font-size: 13px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .small-btn:hover {
+            background: #174b50;
+            text-decoration: none;
+        }
+
+        /* =========================================
+           ON-CHAIN DASHBOARD
+           ========================================= */
+
+        .oc-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .oc-stat {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            min-width: 0;
+        }
+
+        .oc-stat strong {
+            display: block;
+            color: var(--accent);
+            font-size: clamp(22px, 2.5vw, 30px);
+            line-height: 1.3;
+            overflow-wrap: anywhere;
+        }
+
+        .oc-stat span {
+            display: block;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .oc-allocation-row {
+            margin: 20px 0;
+        }
+
+        .oc-allocation-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .oc-allocation-track {
+            display: flex;
+            background: #26364b;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 12px;
+            margin-top: 9px;
+        }
+
+        .oc-locked-bar {
+            background: var(--green);
+        }
+
+        .oc-initial-bar {
+            background: var(--gold);
+        }
+
+        /* =========================================
+           VESTING CHART
+           ========================================= */
+
+        .oc-chart {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .oc-slider {
+            width: 100%;
+            accent-color: var(--accent);
+            cursor: pointer;
+            margin: 16px 0 4px;
+        }
+
+        .oc-slider-labels {
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .oc-unlock-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .oc-unlock-value {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            min-width: 0;
+        }
+
+        .oc-unlock-value strong {
+            display: block;
+            color: var(--accent);
+            font-size: clamp(20px, 3vw, 30px);
+            overflow-wrap: anywhere;
+            margin: 6px 0;
+        }
+
+        .oc-table {
+            min-width: 760px;
+        }
+
+        /* =========================================
+           CONTRACT DIRECTORY
+           ========================================= */
+
+        .oc-contract-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .oc-contract {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            min-width: 0;
+        }
+
+        .oc-contract h3 {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .oc-amount {
+            color: var(--accent);
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .oc-contract-label {
+            font-size: 12px;
+            letter-spacing: .08em;
+            color: var(--muted);
+            text-transform: uppercase;
+            margin: 22px 0 6px;
+        }
+
+        .oc-copy-status {
+            min-height: 22px;
+            font-size: 13px;
+            color: var(--accent);
+        }
+
+        .oc-error {
+            color: var(--gold);
+            background: var(--surface);
+            padding: 16px;
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+        }
+
+        /* =========================================
+           COMMUNITY AND FOOTER
+           ========================================= */
+
+        .social article {
+            border-top: 2px solid var(--accent);
+        }
+
+        footer {
+            color: #a9b9cc;
+            font-size: 13px;
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+
+        @media (max-width: 900px) {
+
+            .oc-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            main,
+            nav,
+            footer {
+                padding: 16px;
+            }
+
+            section {
+                padding: 38px 0;
+            }
+
+            .grid,
+            .oc-contract-grid,
+            .oc-unlock-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .oc-stat,
+            .oc-contract,
+            .panel,
+            article,
+            .stat {
+                padding: 18px;
+            }
+
+            .nav-links {
+                gap: 10px 14px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .oc-allocation-title {
+                font-size: 12px;
+            }
+
+        }
+
+        @media (max-width: 380px) {
+
+            .oc-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<nav>
-  <a class="brand" href="#">
-    <img src="chitos-logo.webp"
-         alt="Chitos cyber fox logo">
-    <strong>CHITOS / CHTC</strong>
-  </a>
-
-  <div>
-    <a href="#tokenomics">Tokenomics</a>
-    <a href="#utility">Utility</a>
-    <a href="ai/">AI Hub</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#transparency">Transparency</a>
-    <a href="#community">Community</a>
-  </div>
-</nav>
-
-<main>
-
-<!-- HERO -->
-
-<section class="hero">
-
-  <img class="banner"
-       src="chitos-banner.webp"
-       alt="Chitos Coin AI Cyber Fox brand artwork">
-
-  <div class="tag">
-    BNB SMART CHAIN · BEP-20
-  </div>
-
-  <div>
-    <span class="status status-live">
-      MAINNET LIVE
-    </span>
-    <span class="status status-live">
-      TOKEN SOURCE VERIFIED
-    </span>
-    <span class="status status-pending">
-      TRADING NOT LAUNCHED
-    </span>
-  </div>
-
-  <h1>Community culture.<br>AI ambition.</h1>
-
-  <p>
-    Chitos Coin (CHTC) is a community token
-    deployed on BNB Smart Chain Mainnet,
-    exploring future AI-powered utility.
-    Built around transparent supply,
-    scheduled distribution and multisig custody.
-  </p>
-
-  <a class="btn" href="whitepaper.pdf">
-    Read whitepaper
-  </a>
-
-  <a class="btn" href="ai/">
-    Launch AI Hub
-  </a>
+    <!-- =========================================
+         NAVIGATION
+         ========================================= -->
 
-  <a class="btn btn-secondary" href="#community">
-    Join community
-  </a>
+    <nav>
 
-  <a href="#tokenomics">
-    Explore tokenomics ↓
-  </a>
+        <a class="brand" href="#">
 
-  <div class="contract-box">
-
-    <div class="tag">
-      OFFICIAL MAINNET CONTRACT
-    </div>
-
-    <code class="contract-address"
-          id="contractAddress">0x5ab5c557c2eb29fc1c3642b31345049f0dc31208</code>
-
-    <button class="btn"
-            id="copyButton"
-            type="button"
-            onclick="copyContract()">
-      Copy Address
-    </button>
-
-    <a class="btn btn-secondary"
-       href="https://bscscan.com/token/0x5ab5c557c2eb29fc1c3642b31345049f0dc31208"
-       target="_blank"
-       rel="noopener noreferrer">
-      View on BscScan
-    </a>
-
-    <p class="small" id="copyStatus" aria-live="polite">
-      BNB Smart Chain · Chain ID 56 · CHTC
-    </p>
-
-  </div>
-
-  <p class="notice">
-    Mainnet deployment is complete.
-    Public trading has not launched.
-    No presale is being conducted.
-    AI Hub is available in private beta;
-    no token payment or redemption is enabled.
-    No independent security audit has been completed.
-  </p>
+            <img src="chitos-logo.webp"
+                 alt="Chitos cyber fox logo">
 
-</section>
+            <strong>CHITOS / CHTC</strong>
 
-<!-- TOKENOMICS -->
+        </a>
 
-<section id="tokenomics">
+        <div class="nav-links">
 
-  <div class="tag">ON-CHAIN DISTRIBUTION</div>
+            <a href="#tokenomics">Tokenomics</a>
 
-  <h2>Transparent by design</h2>
+            <a href="#utility">Utility</a>
 
-  <div class="grid">
-
-    <div class="stat">
-      <strong>1B</strong>
-      Initial token supply
-    </div>
+            <a href="ai/">AI Hub</a>
 
-    <div class="stat">
-      <strong>95%</strong>
-      Funded vesting allocation at deployment
-    </div>
+            <a href="#roadmap">Roadmap</a>
 
-    <div class="stat">
-      <strong>5%</strong>
-      Initial multisig allocation
-    </div>
-
-  </div>
+            <a href="#transparency">Transparency</a>
 
-  <div class="bar"
-       aria-label="Token allocation breakdown">
-
-    <span style="width:40%;background:#8ce8d5"
-          title="Community & Rewards 40%"></span>
-
-    <span style="width:20%;background:#56a7d9"
-          title="Liquidity & Exchange 20%"></span>
-
-    <span style="width:15%;background:#8c90ed"
-          title="AI Utility Ecosystem 15%"></span>
-
-    <span style="width:10%;background:#d6a5ed"
-          title="Founder & Team 10%"></span>
-
-    <span style="width:10%;background:#e9b86b"
-          title="Marketing & Partnership 10%"></span>
-
-    <span style="width:5%;background:#7c899d"
-          title="Reserve 5%"></span>
-
-  </div>
-
-  <div class="scroll">
+            <a href="#onchain">On-Chain</a>
 
-    <table>
+            <a href="#community">Community</a>
 
-      <thead>
-        <tr>
-          <th>Allocation</th>
-          <th>Total M</th>
-          <th>Initial M</th>
-          <th>Vesting M</th>
-          <th>Cliff</th>
-          <th>Release</th>
-        </tr>
-      </thead>
+        </div>
 
-      <tbody>
+    </nav>
 
-        <tr>
-          <td>Community & Rewards</td>
-          <td>400</td><td>10</td><td>390</td>
-          <td>0</td><td>48</td>
-        </tr>
-
-        <tr>
-          <td>Liquidity & Exchange</td>
-          <td>200</td><td>30</td><td>170</td>
-          <td>0</td><td>36</td>
-        </tr>
+    <main>
 
-        <tr>
-          <td>AI Utility Ecosystem</td>
-          <td>150</td><td>5</td><td>145</td>
-          <td>0</td><td>48</td>
-        </tr>
+        <!-- =====================================
+             HERO
+             ===================================== -->
 
-        <tr>
-          <td>Founder & Team</td>
-          <td>100</td><td>0</td><td>100</td>
-          <td>12</td><td>36</td>
-        </tr>
+        <section class="hero">
 
-        <tr>
-          <td>Marketing & Partnership</td>
-          <td>100</td><td>5</td><td>95</td>
-          <td>0</td><td>36</td>
-        </tr>
+            <img class="banner"
+                 src="chitos-banner.webp"
+                 alt="Chitos Coin AI Cyber Fox brand artwork">
 
-        <tr>
-          <td>Reserve</td>
-          <td>50</td><td>0</td><td>50</td>
-          <td>24</td><td>24</td>
-        </tr>
+            <div class="status-badge">
 
-        <tr>
-          <th>Total</th>
-          <th>1,000</th>
-          <th>50</th>
-          <th>950</th>
-          <th>—</th>
-          <th>—</th>
-        </tr>
+                <span class="status-dot"></span>
 
-      </tbody>
+                MAINNET DEPLOYED
 
-    </table>
+            </div>
 
-  </div>
-
-  <p>
-    M = million CHTC.
-    Cliff and release durations are measured
-    in fixed 30-day periods.
-    The first release occurs one period
-    after the cliff ends.
-  </p>
+            <div class="tag">
 
-  <p>
-    All six vesting contracts were fully funded
-    at initial distribution.
-    The remaining 50 million CHTC were transferred
-    to designated multisig wallets.
-    These allocations do not represent
-    circulating supply or market liquidity.
-  </p>
-
-  <p class="notice">
-    Vesting is not an LP token lock.
-    No liquidity pool has been launched.
-    The figures above describe initial allocation,
-    not real-time balances.
-  </p>
+                BNB SMART CHAIN · CHTC · BEP-20
 
-</section>
+            </div>
 
-<!-- MAINNET STATUS -->
+            <h1>
 
-<section id="mainnet">
+                Community culture.<br>
 
-  <div class="tag">DEPLOYMENT RECORD</div>
+                AI ambition.
 
-  <h2>Mainnet deployment</h2>
+            </h1>
 
-  <div class="grid">
+            <p>
 
-    <div class="stat">
-      <strong>13</strong>
-      Deployed contracts
-    </div>
+                Chitos Coin is a community token exploring
+                AI-powered utility, transparent token
+                distribution and long-term ecosystem
+                development on BNB Smart Chain.
 
-    <div class="stat">
-      <strong>6/6</strong>
-      Funded vesting contracts
-    </div>
+            </p>
 
-    <div class="stat">
-      <strong>6</strong>
-      Safe multisig wallets
-    </div>
+            <a class="btn" href="whitepaper.pdf">
 
-    <div class="stat">
-      <strong>0</strong>
-      Deployer CHTC at distribution completion
-    </div>
+                Read Whitepaper
 
-  </div>
+            </a>
 
-  <div class="contract-box">
+            <a class="btn btn-outline" href="#onchain">
 
-    <h3>Deployment status</h3>
+                On-Chain Transparency
 
-    <ul class="status-list">
+            </a>
 
-      <li>
-        <span class="check">✓</span>
-        Mainnet token deployed
-      </li>
+            <a class="btn btn-outline" href="#community">
 
-      <li>
-        <span class="check">✓</span>
-        Token source code verified on BscScan
-      </li>
+                Join Community
 
-      <li>
-        <span class="check">✓</span>
-        Six vesting contracts deployed and funded
-      </li>
+            </a>
 
-      <li>
-        <span class="check">✓</span>
-        Six 2-of-3 Safe multisig wallets deployed
-      </li>
+            <a class="btn" href="ai/">
 
-      <li>
-        <span class="check">✓</span>
-        Initial token distribution completed
-      </li>
+                Launch AI Hub
 
-      <li>
-        <span class="pending">○</span>
-        Additional explorer verification
-        not completed for every contract
-      </li>
+            </a>
 
-      <li>
-        <span class="pending">○</span>
-        Independent security audit not completed
-      </li>
+            <p class="notice">
 
-      <li>
-        <span class="pending">○</span>
-        Public trading not launched
-      </li>
+                Mainnet deployment and initial token
+                distribution are complete.
 
-    </ul>
+                Public trading has not launched.
 
-    <p class="small">
-      Deployment and initial distribution record:
-      BNB Smart Chain block 136205293.
-    </p>
+                AI Hub is available in private beta.
 
-    <a href="https://bscscan.com/tx/0x7e73e7af88c4ee706844a11eba4bf357c793ec7b48ab532fabe7d63a792e8a41"
-       target="_blank"
-       rel="noopener noreferrer">
-      View final distribution transaction ↗
-    </a>
+                Token payment and redemption are not enabled.
 
-  </div>
+                No independent security audit has been
+                completed.
 
-</section>
+            </p>
 
-<!-- UTILITY AND SECURITY -->
+        </section>
 
-<section id="utility">
+        <!-- =====================================
+             TOKENOMICS
+             ===================================== -->
 
-  <h2>Utility & security</h2>
+        <section id="tokenomics">
 
-  <div class="grid">
+            <div class="tag">TOKEN ECONOMICS</div>
 
-    <article>
+            <h2>Transparent by design</h2>
 
-      <h3>AI ecosystem</h3>
+            <p>
 
-      <p>
-        The Chitos ecosystem explores
-        AI-assisted content creation,
-        productivity tools and community participation.
-      </p>
+                CHTC was created with a fixed initial supply
+                and predefined token allocations.
 
-      <p>
-        Potential future uses include access credits,
-        service payments and contribution rewards,
-        subject to technical feasibility,
-        legal review and actual product delivery.
-      </p>
+                No additional minting function is available
+                in the deployed token contract.
 
-      <p>
-        CHITOS AI HUB is available in private beta
-        with five AI tools and wallet connection.
-        No token purchase is required.
-        Token payments, redemption and wallet-based
-        authentication are not enabled.
-      </p>
-
-      <a class="btn" href="ai/">
-        Open AI Hub
-      </a>
-
-    </article>
-
-    <article>
-
-      <h3>Token architecture</h3>
-
-      <p>
-        CHTC is a BEP-20 compatible token
-        implemented using OpenZeppelin contracts.
-      </p>
-
-      <ul>
-        <li>Initial supply: 1 billion CHTC</li>
-        <li>18 decimals</li>
-        <li>No additional mint function</li>
-        <li>No transfer tax</li>
-        <li>Burn support</li>
-        <li>ERC-2612 permit support</li>
-        <li>Non-upgradeable token contract</li>
-        <li>No privileged token administrator</li>
-      </ul>
+                Token burning may reduce the total supply.
 
-      <p>
-        Token burning may reduce the total supply.
-      </p>
+            </p>
 
-    </article>
+            <div class="grid">
 
-    <article>
+                <div class="stat">
 
-      <h3>Custody and transparency</h3>
+                    <strong>1B</strong>
 
-      <p>
-        Six separate Safe multisig wallets
-        have been deployed as designated beneficiaries,
-        using the same three signers
-        with a two-signature threshold.
-      </p>
+                    Initial token supply
 
-      <p>
-        Signer storage on one computer creates
-        correlated compromise risk.
-        Independent devices or hardware wallets
-        are recommended before public launch.
-      </p>
+                </div>
 
-      <p>
-        Vesting beneficiaries and schedules
-        are immutable in the deployed vesting contracts.
-      </p>
+                <div class="stat">
 
-    </article>
+                    <strong>95%</strong>
 
-    <article>
+                    Initial vesting allocation
 
-      <h3>Development and security status</h3>
+                </div>
 
-      <p>
-        Reported testnet checks passed 164/164,
-        including allocation reconciliation,
-        early-release rejection
-        and vesting boundary calculations.
-      </p>
+                <div class="stat">
 
-      <p>
-        The final Mainnet deployment script
-        reported 6,087 passed checks and zero failures
-        at initial distribution completion.
-      </p>
+                    <strong>5%</strong>
 
-      <p>
-        Actual post-unlock release testing,
-        third-signer execution and remaining
-        security review are incomplete.
-        Script checks and source verification
-        are not independent security audits.
-      </p>
+                    Initial multisig allocation
 
-    </article>
+                </div>
 
-    <article>
+                <div class="stat">
 
-      <h3>Risks and legal notice</h3>
+                    <strong>0%</strong>
 
-      <p>
-        CHTC is experimental.
-        Smart contract defects, permanent loss of keys,
-        irreversible transfers, market volatility,
-        illiquidity, regulatory changes
-        and failure to deliver utility
-        may cause total loss.
-      </p>
+                    Transfer tax
 
-      <p>
-        This website is informational,
-        not an offer, investment recommendation
-        or promise of returns.
-        Before public distribution, marketing
-        or trading, obtain jurisdiction-specific
-        legal advice, including Thai digital-asset
-        requirements.
-      </p>
+                </div>
 
-      <p>
-        No exchange affiliation, endorsement
-        or guaranteed listing is claimed.
-      </p>
+            </div>
 
-    </article>
+            <div class="bar"
+                 role="img"
+                 aria-label="CHTC allocation distribution">
 
-  </div>
+                <span style="width:40%;background:#8ce8d5"
+                      title="Community & Rewards 40%"></span>
 
-</section>
+                <span style="width:20%;background:#56a7d9"
+                      title="Liquidity & Exchange 20%"></span>
 
-<!-- ROADMAP -->
+                <span style="width:15%;background:#8c90ed"
+                      title="AI Utility Ecosystem 15%"></span>
 
-<section id="roadmap">
+                <span style="width:10%;background:#d6a5ed"
+                      title="Founder & Team 10%"></span>
 
-  <h2>Roadmap</h2>
+                <span style="width:10%;background:#e9b86b"
+                      title="Marketing & Partnership 10%"></span>
 
-  <div class="grid">
+                <span style="width:5%;background:#7c899d"
+                      title="Reserve 5%"></span>
 
-    <article>
+            </div>
 
-      <span class="status status-live">
-        FOUNDATION ESTABLISHED
-      </span>
+            <div class="legend">
 
-      <h3>01 / Foundation</h3>
+                <span>
 
-      <p>
-        Token design, smart contract development,
-        testnet deployment and tokenomics.
-        Remaining security items are open.
-      </p>
+                    <i class="legend-dot"
+                       style="background:#8ce8d5"></i>
 
-    </article>
+                    Community 40%
 
-    <article>
+                </span>
 
-      <span class="status status-live">
-        DEPLOYED
-      </span>
+                <span>
 
-      <h3>02 / Mainnet</h3>
+                    <i class="legend-dot"
+                       style="background:#56a7d9"></i>
 
-      <p>
-        Token deployment, vesting funding,
-        multisig creation and initial distribution
-        completed.
-        Additional verification and legal review remain.
-      </p>
+                    Liquidity 20%
 
-    </article>
+                </span>
 
-    <article>
+                <span>
 
-      <span class="status status-pending">
-        IN PREPARATION
-      </span>
+                    <i class="legend-dot"
+                       style="background:#8c90ed"></i>
 
-      <h3>03 / Market readiness</h3>
+                    AI Utility 15%
 
-      <p>
-        Update project documentation,
-        evaluate regulatory requirements,
-        prepare token information and assess
-        DEX liquidity options before public launch.
-      </p>
+                </span>
 
-    </article>
+                <span>
 
-    <article>
+                    <i class="legend-dot"
+                       style="background:#d6a5ed"></i>
 
-      <span class="status status-pending">
-        PRIVATE BETA
-      </span>
+                    Founder 10%
 
-      <h3>04 / Ecosystem</h3>
+                </span>
 
-      <p>
-        Develop AI products, community participation
-        and evaluate future exchange applications.
-        No exchange listing is guaranteed.
-      </p>
+                <span>
 
-    </article>
+                    <i class="legend-dot"
+                       style="background:#e9b86b"></i>
 
-  </div>
+                    Marketing 10%
 
-</section>
+                </span>
 
-<!-- TRANSPARENCY -->
+                <span>
 
-<section id="transparency">
+                    <i class="legend-dot"
+                       style="background:#7c899d"></i>
 
-  <div class="tag">VERIFY ON-CHAIN</div>
+                    Reserve 5%
 
-  <h2>Contract transparency</h2>
+                </span>
 
-  <div class="contract-box">
+            </div>
 
-    <h3>Chitos Coin Mainnet</h3>
+            <div class="scroll">
 
-    <code class="contract-address">
-      0x5ab5c557c2eb29fc1c3642b31345049f0dc31208
-    </code>
+                <table>
 
-    <div class="scroll">
+                    <thead>
 
-      <table>
+                        <tr>
 
-        <tbody>
+                            <th>Allocation</th>
 
-          <tr>
-            <th>Token Name</th>
-            <td>Chitos Coin</td>
-          </tr>
+                            <th>Total M</th>
 
-          <tr>
-            <th>Symbol</th>
-            <td>CHTC</td>
-          </tr>
+                            <th>Initial M</th>
 
-          <tr>
-            <th>Network</th>
-            <td>BNB Smart Chain Mainnet</td>
-          </tr>
+                            <th>Vesting M</th>
 
-          <tr>
-            <th>Chain ID</th>
-            <td>56</td>
-          </tr>
+                            <th>Cliff</th>
 
-          <tr>
-            <th>Token Standard</th>
-            <td>BEP-20 / ERC-20 compatible</td>
-          </tr>
+                            <th>Release</th>
 
-          <tr>
-            <th>Decimals</th>
-            <td>18</td>
-          </tr>
+                        </tr>
 
-          <tr>
-            <th>Initial Supply</th>
-            <td>1,000,000,000 CHTC</td>
-          </tr>
+                    </thead>
 
-          <tr>
-            <th>Compiler</th>
-            <td>Solidity 0.8.34</td>
-          </tr>
+                    <tbody>
 
-          <tr>
-            <th>Optimizer</th>
-            <td>Enabled / 200 runs</td>
-          </tr>
+                        <tr>
 
-          <tr>
-            <th>EVM Version</th>
-            <td>Cancun</td>
-          </tr>
+                            <td>Community & Rewards</td>
 
-          <tr>
-            <th>License</th>
-            <td>MIT</td>
-          </tr>
+                            <td>400</td>
 
-          <tr>
-            <th>Token Source Code</th>
-            <td class="check">Verified on BscScan</td>
-          </tr>
+                            <td>10</td>
 
-          <tr>
-            <th>Independent Audit</th>
-            <td class="pending">Not completed</td>
-          </tr>
+                            <td>390</td>
 
-        </tbody>
+                            <td>0</td>
 
-      </table>
+                            <td>48</td>
 
-    </div>
+                        </tr>
 
-    <a class="btn"
-       href="https://bscscan.com/address/0x5ab5c557c2eb29fc1c3642b31345049f0dc31208#code"
-       target="_blank"
-       rel="noopener noreferrer">
-      View verified source
-    </a>
+                        <tr>
 
-    <a class="btn btn-secondary"
-       href="https://bscscan.com/token/0x5ab5c557c2eb29fc1c3642b31345049f0dc31208#balances"
-       target="_blank"
-       rel="noopener noreferrer">
-      View token holders
-    </a>
+                            <td>Liquidity & Exchange</td>
 
-  </div>
+                            <td>200</td>
 
-  <h3>Deployment transaction</h3>
+                            <td>30</td>
 
-  <p>
-    <a href="https://bscscan.com/tx/0xd0a1db0f2353a40e3d701e863f0f2f9e46532042687bfaa8b3d0a0ffadb49179"
-       target="_blank"
-       rel="noopener noreferrer">
-      <code>0xd0a1db0f2353a40e3d701e863f0f2f9e46532042687bfaa8b3d0a0ffadb49179</code>
-    </a>
-  </p>
+                            <td>170</td>
 
-  <h3>Testnet reference</h3>
+                            <td>0</td>
 
-  <p>
-    Historical testnet token.
-    This is not the Mainnet CHTC token.
-  </p>
+                            <td>36</td>
 
-  <p>
-    <a href="https://testnet.bscscan.com/address/0x5bDB3a544409EB311eefA98e9310f85094aDeB87"
-       target="_blank"
-       rel="noopener noreferrer">
-      <code>0x5bDB3a544409EB311eefA98e9310f85094aDeB87</code>
-    </a>
-  </p>
+                        </tr>
 
-  <h3>Project documentation</h3>
+                        <tr>
 
-  <a class="btn" href="whitepaper.pdf">
-    Whitepaper v0.1 (PDF)
-  </a>
+                            <td>AI Utility Ecosystem</td>
 
-  <p class="small">
-    The existing whitepaper is a historical
-    pre-Mainnet draft.
-    An updated Mainnet edition is in preparation.
-    Refer to the Mainnet contract for deployed
-    token information.
-  </p>
+                            <td>150</td>
 
-</section>
+                            <td>5</td>
 
-<!-- COMMUNITY -->
+                            <td>145</td>
 
-<section id="community">
+                            <td>0</td>
 
-  <div class="tag">
-    CONNECT WITH CHITOS
-  </div>
+                            <td>48</td>
 
-  <h2>Join the Chitos Community</h2>
+                        </tr>
 
-  <p>
-    Follow development updates, share ideas
-    and explore the Chitos AI ecosystem.
-  </p>
+                        <tr>
 
-  <div class="grid social">
+                            <td>Founder & Team</td>
 
-    <article>
+                            <td>100</td>
 
-      <h3>X (Twitter)</h3>
+                            <td>0</td>
 
-      <p>Follow official project updates.</p>
+                            <td>100</td>
 
-      <a class="btn"
-         href="https://x.com/ChitosCoinAI"
-         target="_blank"
-         rel="noopener noreferrer">
-        Join X (Twitter)
-      </a>
+                            <td>12</td>
 
-    </article>
+                            <td>36</td>
 
-    <article>
+                        </tr>
 
-      <h3>Telegram</h3>
+                        <tr>
 
-      <p>Connect with the CHTC community.</p>
+                            <td>Marketing & Partnership</td>
 
-      <a class="btn"
-         href="https://t.me/ChitosCoinAI"
-         target="_blank"
-         rel="noopener noreferrer">
-        Join Telegram
-      </a>
+                            <td>100</td>
 
-    </article>
+                            <td>5</td>
 
-    <article>
+                            <td>95</td>
 
-      <h3>Discord</h3>
+                            <td>0</td>
 
-      <p>
-        Join discussions and explore AI utility.
-      </p>
+                            <td>36</td>
 
-      <a class="btn"
-         href="https://discord.gg/GyaH9vCHdU"
-         target="_blank"
-         rel="noopener noreferrer">
-        Join Discord
-      </a>
+                        </tr>
 
-    </article>
+                        <tr>
 
-  </div>
+                            <td>Reserve</td>
 
-  <p class="notice">
-    Mainnet deployed. Trading not launched.
-    No presale.
-    Never send funds or disclose wallet credentials
-    to anyone claiming to represent CHTC.
-  </p>
+                            <td>50</td>
 
-</section>
+                            <td>0</td>
 
-</main>
+                            <td>50</td>
 
-<footer>
+                            <td>24</td>
 
-  <strong>CHITOS COIN / CHTC</strong>
+                            <td>24</td>
 
-  <p>
-    BNB Smart Chain Mainnet · Website v1.0 ·
-    November 2026.
-  </p>
+                        </tr>
 
-  <p>
-    Informational only.
-    No guaranteed returns or exchange affiliation.
-    All cryptocurrency activities involve risk.
-  </p>
+                    </tbody>
 
-  <a href="https://github.com/chinnakornh/chitos-coin"
-     target="_blank"
-     rel="noopener noreferrer">
-    GitHub
-  </a>
+                    <tfoot>
 
-  &nbsp;·&nbsp;
+                        <tr>
 
-  <a href="https://bscscan.com/token/0x5ab5c557c2eb29fc1c3642b31345049f0dc31208"
-     target="_blank"
-     rel="noopener noreferrer">
-    BscScan
-  </a>
+                            <td>Total</td>
 
-</footer>
+                            <td>1,000</td>
 
-<script>
-async function copyContract() {
+                            <td>50</td>
 
-  const address =
-    document.getElementById("contractAddress")
-      .textContent.trim();
+                            <td>950</td>
 
-  const button =
-    document.getElementById("copyButton");
+                            <td>—</td>
 
-  const status =
-    document.getElementById("copyStatus");
+                            <td>—</td>
 
-  try {
+                        </tr>
 
-    await navigator.clipboard.writeText(address);
+                    </tfoot>
 
-    button.textContent = "Copied!";
+                </table>
 
-    status.textContent =
-      "Official contract address copied.";
+            </div>
 
-    setTimeout(function () {
-      button.textContent = "Copy Address";
-      status.textContent =
-        "BNB Smart Chain · Chain ID 56 · CHTC";
-    }, 2500);
+            <p class="small">
 
-  } catch (error) {
+                M = million CHTC.
 
-    status.textContent =
-      "Unable to copy automatically. " +
-      "Please select and copy the address manually.";
+                Cliff and release durations are measured
+                in 30-day periods.
 
-  }
+                First release occurs one period after
+                the cliff ends.
 
-}
-</script>
+                No presale has been conducted.
+
+                Token vesting is not an LP lock.
+
+            </p>
+
+        </section>
+
+        <!-- =====================================
+             AI UTILITY AND SECURITY
+             ===================================== -->
+
+        <section id="utility">
+
+            <div class="tag">ECOSYSTEM</div>
+
+            <h2>Utility & Security</h2>
+
+            <div class="grid">
+
+                <article>
+
+                    <h3>AI Utility Ecosystem</h3>
+
+                    <p>
+
+                        The Chitos ecosystem explores
+                        AI-assisted content creation,
+                        productivity tools and community
+                        participation.
+
+                        Potential future uses include
+                        AI service credits, service
+                        payments and contribution rewards,
+                        subject to technical feasibility,
+                        legal review and product delivery.
+
+                    </p>
+
+                    <a href="ai/">
+
+                        Explore AI Hub →
+
+                    </a>
+
+                </article>
+
+                <article>
+
+                    <h3>CHITOS AI HUB</h3>
+
+                    <p>
+
+                        CHITOS AI HUB is available in
+                        private beta with five AI tools
+                        and wallet connection.
+
+                        No token purchase is required.
+
+                        Token payments, token redemption
+                        and wallet-based authentication
+                        are not enabled.
+
+                    </p>
+
+                    <a class="btn" href="ai/">
+
+                        Launch AI Hub
+
+                    </a>
+
+                </article>
+
+                <article>
+
+                    <h3>Multisig Custody</h3>
+
+                    <p>
+
+                        Six separate Safe multisig
+                        beneficiary wallets have been
+                        deployed using Safe 1.4.1.
+
+                        Each wallet requires two of three
+                        authorized owners to approve
+                        transactions.
+
+                        All six wallets use the same
+                        three owners.
+
+                    </p>
+
+                    <a href="#onchain">
+
+                        View Contract Directory →
+
+                    </a>
+
+                </article>
+
+                <article>
+
+                    <h3>Token Contract Design</h3>
+
+                    <p>
+
+                        CHTC uses an ERC-20-compatible
+                        token implementation on BNB
+                        Smart Chain with 18 decimals,
+                        burn and permit support.
+
+                        The deployed token has no
+                        additional minting function,
+                        transfer tax, owner-controlled
+                        blacklist or upgrade mechanism.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>Development & Security</h3>
+
+                    <p>
+
+                        Reported testnet checks passed
+                        164/164, including allocation
+                        reconciliation, early-release
+                        rejection and vesting boundary
+                        calculations.
+
+                        Two-owner Safe execution and
+                        single-signature rejection were
+                        tested on testnet.
+
+                        Actual post-unlock release and
+                        remaining security review are
+                        incomplete.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>Risks & Legal Notice</h3>
+
+                    <p>
+
+                        CHTC is experimental.
+
+                        Smart contract defects, loss
+                        of keys, irreversible transfers,
+                        market volatility, illiquidity
+                        and regulatory changes may cause
+                        total loss.
+
+                        Obtain jurisdiction-specific
+                        legal advice before public
+                        distribution, marketing or trading,
+                        including applicable Thai
+                        digital-asset requirements.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+            <p class="notice">
+
+                Source code verification is not a security
+                audit.
+
+                No independent audit has been completed.
+
+                Shared-device signer storage creates
+                correlated compromise risk.
+
+                Independent devices or hardware wallets
+                are recommended for production custody.
+
+            </p>
+
+        </section>
+
+        <!-- =====================================
+             ROADMAP
+             ===================================== -->
+
+        <section id="roadmap">
+
+            <div class="tag">PROJECT DEVELOPMENT</div>
+
+            <h2>Roadmap</h2>
+
+            <div class="grid">
+
+                <article>
+
+                    <div class="tag">
+
+                        PHASE 01
+
+                    </div>
+
+                    <h3>Foundation</h3>
+
+                    <p>
+
+                        Token design, tokenomics,
+                        smart contract development,
+                        testnet validation and
+                        project branding.
+
+                    </p>
+
+                    <p class="small">
+
+                        Core implementation completed.
+                        Security review items remain open.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <div class="tag">
+
+                        PHASE 02
+
+                    </div>
+
+                    <h3>Mainnet Deployment</h3>
+
+                    <p>
+
+                        Mainnet token deployment,
+                        six vesting contracts,
+                        six multisig wallets and
+                        initial token distribution.
+
+                    </p>
+
+                    <p class="small">
+
+                        Deployment and initial
+                        distribution completed.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <div class="tag">
+
+                        PHASE 03
+
+                    </div>
+
+                    <h3>Market Readiness</h3>
+
+                    <p>
+
+                        Public transparency dashboard,
+                        updated project documentation,
+                        security and legal review,
+                        and evaluation of DEX liquidity.
+
+                    </p>
+
+                    <p class="small">
+
+                        In development.
+                        Public trading not launched.
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <div class="tag">
+
+                        PHASE 04
+
+                    </div>
+
+                    <h3>Ecosystem Expansion</h3>
+
+                    <p>
+
+                        AI Hub development,
+                        community growth,
+                        potential token utility
+                        and evaluation of future
+                        exchange applications.
+
+                    </p>
+
+                    <p class="small">
+
+                        Future development.
+                        No exchange listing guaranteed.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================
+             CONTRACT TRANSPARENCY
+             ===================================== -->
+
+        <section id="transparency">
+
+            <div class="tag">
+
+                MAINNET DEPLOYMENT RECORD
+
+            </div>
+
+            <h2>Contract Transparency</h2>
+
+            <p>
+
+                Chitos Coin has been deployed on
+                BNB Smart Chain Mainnet.
+
+                The official token address and
+                distribution records are publicly
+                accessible through BscScan.
+
+            </p>
+
+            <div class="panel">
+
+                <h3>Official Token Contract</h3>
+
+                <div class="scroll">
+
+                    <table>
+
+                        <tbody>
+
+                            <tr>
+
+                                <th>Token Name</th>
+
+                                <td>Chitos Coin</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Symbol</th>
+
+                                <td>CHTC</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Network</th>
+
+                                <td>BNB Smart Chain Mainnet</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Chain ID</th>
+
+                                <td>56</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Token Standard</th>
+
+                                <td>BEP-20 compatible</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Decimals</th>
+
+                                <td>18</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Initial Supply</th>
+
+                                <td>1,000,000,000 CHTC</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Additional Minting</th>
+
+                                <td>Not available</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Transfer Tax</th>
+
+                                <td>0%</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Burn Support</th>
+
+                                <td>Yes</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Permit Support</th>
+
+                                <td>Yes</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Upgradeable Token</th>
+
+                                <td>No</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Source Verification</th>
+
+                                <td>Verified on BscScan</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p class="small">
+
+                    Official Mainnet Contract Address
+
+                </p>
+
+                <code class="address">0x5ab5c557c2eb29fc1c3642b31345049f0dc31208</code>
+
+                <div class="actions">
+
+                    <button
+                        class="small-btn"
+                        type="button"
+                        data-copy="0x5ab5c557c2eb29fc1c3642b31345049f0dc31208">
+
+                        Copy Address
+
+                    </button>
+
+                    <a class="small-btn"
+                       href="https://bscscan.com/address/0x5ab5c557c2eb29fc1c3642b31345049f0dc31208#code"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Verified Source Code ↗
+
+                    </a>
+
+                    <a class="small-btn"
+                       href="https://bscscan.com/token/0x5ab5c557c2eb29fc1c3642b31345049f0dc31208"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Token Tracker ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="oc-grid">
+
+                <div class="oc-stat">
+
+                    <strong>13</strong>
+
+                    <span>Deployed contracts</span>
+
+                </div>
+
+                <div class="oc-stat">
+
+                    <strong>6/6</strong>
+
+                    <span>Funded vesting contracts</span>
+
+                </div>
+
+                <div class="oc-stat">
+
+                    <strong>6</strong>
+
+                    <span>Safe multisig wallets</span>
+
+                </div>
+
+                <div class="oc-stat">
+
+                    <strong>0</strong>
+
+                    <span>
+
+                        Deployer CHTC at
+                        distribution completion
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <h3>Deployment Status</h3>
+
+                <ul class="status-list">
+
+                    <li>
+
+                        <span class="status-ok">✓</span>
+
+                        Mainnet token deployed
+
+                    </li>
+
+                    <li>
+
+                        <span class="status-ok">✓</span>
+
+                        Token source code verified on BscScan
+
+                    </li>
+
+                    <li>
+
+                        <span class="status-ok">✓</span>
+
+                        Six vesting contracts deployed
+                        and funded
+
+                    </li>
+
+                    <li>
+
+                        <span class="status-ok">✓</span>
+
+                        Six 2-of-3 Safe multisig
+                        wallets deployed
+
+                    </li>
+
+                    <li>
+
+                        <span class="status-ok">✓</span>
+
+                        Initial token distribution completed
+
+                    </li>
+
+                    <li>
+
+                        <span class="status-pending">○</span>
+
+                        Additional explorer verification
+                        not completed for every contract
+
+                    </li>
+
+                    <li>
+
+                        <span class="status-pending">○</span>
+
+                        Independent security audit
+                        not completed
+
+                    </li>
+
+                    <li>
+
+                        <span class="status-pending">○</span>
+
+                        Public trading not launched
+
+                    </li>
+
+                </ul>
+
+                <p class="small">
+
+                    Deployment and initial distribution
+                    record: BNB Smart Chain block 136205293.
+
+                </p>
+
+                <a href="https://bscscan.com/block/136205293"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    View Distribution Record Block ↗
+
+                </a>
+
+                <div class="actions">
+
+                    <a class="small-btn"
+                       href="https://bscscan.com/tx/0xd0a1db0f2353a40e3d701e863f0f2f9e46532042687bfaa8b3d0a0ffadb49179"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Token Deployment Transaction ↗
+
+                    </a>
+
+                    <a class="small-btn"
+                       href="https://bscscan.com/token/0x5ab5c557c2eb29fc1c3642b31345049f0dc31208"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Token Transfer History ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <p class="small">
+
+                Testnet token — not mainnet CHTC:
+
+            </p>
+
+            <a href="https://testnet.bscscan.com/address/0x5bDB3a544409EB311eefA98e9310f85094aDeB87"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <code>0x5bDB3a544409EB311eefA98e9310f85094aDeB87</code>
+
+            </a>
+
+            <div>
+
+                <a class="btn btn-outline"
+                   href="whitepaper.pdf">
+
+                    Read Whitepaper
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================
+             ON-CHAIN TRANSPARENCY DASHBOARD
+             ===================================== -->
+
+        <section id="onchain">
+
+            <div class="tag">
+
+                ON-CHAIN TRANSPARENCY DASHBOARD
+
+            </div>
+
+            <h2>Explore the CHTC Ecosystem</h2>
+
+            <p>
+
+                Explore the initial token distribution,
+                official smart contract addresses,
+                multisig custody and scheduled
+                vesting allocations.
+
+            </p>
+
+            <p class="small">
+
+                Network: BNB Smart Chain Mainnet · Chain ID 56
+
+                <br>
+
+                Initial distribution record:
+                November 28, 2026 · Block 136205293
+
+                <br>
+
+                Data mode: Historical distribution
+                snapshot and contractual schedule.
+
+            </p>
+
+            <noscript>
+
+                <p class="notice">
+
+                    JavaScript is required for the
+                    interactive vesting dashboard.
+
+                    Official contract information
+                    remains available above.
+
+                </p>
+
+            </noscript>
+
+            <div id="oc-dashboard-error"
+                 class="oc-error"
+                 role="alert"
+                 hidden>
+
+            </div>
+
+            <!-- SUMMARY -->
+
+            <div class="oc-grid">
+
+                <div class="oc-stat">
+
+                    <strong>1 Billion</strong>
+
+                    <span>Initial CHTC supply</span>
+
+                </div>
+
+                <div class="oc-stat">
+
+                    <strong>950 Million</strong>
+
+                    <span>Initial vesting allocation</span>
+
+                </div>
+
+                <div class="oc-stat">
+
+                    <strong>50 Million</strong>
+
+                    <span>Initial multisig allocation</span>
+
+                </div>
+
+                <div class="oc-stat">
+
+                    <strong>0 CHTC</strong>
+
+                    <span>Deployer balance at distribution</span>
+
+                </div>
+
+            </div>
+
+            <!-- DISTRIBUTION CHART -->
+
+            <div class="panel">
+
+                <h3>Initial Token Distribution</h3>
+
+                <div class="bar"
+                     role="img"
+                     aria-label="95 percent vesting and 5 percent initial multisig allocation">
+
+                    <span class="oc-locked-bar"
+                          style="width:95%"></span>
+
+                    <span class="oc-initial-bar"
+                          style="width:5%"></span>
+
+                </div>
+
+                <div class="legend">
+
+                    <span>
+
+                        <i class="legend-dot"
+                           style="background:#319e8e"></i>
+
+                        95% Vesting Allocation
+
+                    </span>
+
+                    <span>
+
+                        <i class="legend-dot"
+                           style="background:#e9b86b"></i>
+
+                        5% Initial Multisig Allocation
+
+                    </span>
+
+                </div>
+
+                <div id="oc-allocation-bars"></div>
+
+                <p class="small">
+
+                    All six vesting contracts were
+                    fully funded at initial distribution
+                    completion.
+
+                    Bar lengths are relative to the
+                    largest allocation of 400 million CHTC.
+
+                </p>
+
+            </div>
+
+            <!-- INTERACTIVE VESTING CHART -->
+
+            <div class="panel">
+
+                <h3>Scheduled Token Unlock</h3>
+
+                <p>
+
+                    Explore the 48-period contractual
+                    vesting schedule.
+
+                    Move the slider to calculate the
+                    scheduled vested and unvested
+                    token allocations.
+
+                    Each period equals exactly 30 days.
+
+                </p>
+
+                <svg id="oc-unlock-chart"
+                     class="oc-chart"
+                     viewBox="0 0 900 340"
+                     role="img"
+                     aria-label="Cumulative scheduled CHTC token unlock">
+
+                </svg>
+
+                <label for="oc-month-slider">
+
+                    Vesting period:
+
+                    <strong id="oc-selected-month">0</strong>
+
+                    / 48
+
+                </label>
+
+                <input id="oc-month-slider"
+                       class="oc-slider"
+                       type="range"
+                       min="0"
+                       max="48"
+                       step="1"
+                       value="0">
+
+                <div class="oc-slider-labels">
+
+                    <span>0</span>
+
+                    <span>12</span>
+
+                    <span>24</span>
+
+                    <span>36</span>
+
+                    <span>48</span>
+
+                </div>
+
+                <p id="oc-selected-date"
+                   class="small">
+
+                    Schedule date: 29 Nov 2026
+
+                </p>
+
+                <div class="oc-unlock-grid"
+                     aria-live="polite">
+
+                    <div class="oc-unlock-value">
+
+                        <span class="small">
+
+                            Initial allocation +
+                            scheduled vested
+
+                        </span>
+
+                        <strong id="oc-unlocked">
+
+                            50,000,000 CHTC
+
+                        </strong>
+
+                        <span id="oc-unlocked-percent">
+
+                            5.00%
+
+                        </span>
+
+                    </div>
+
+                    <div class="oc-unlock-value">
+
+                        <span class="small">
+
+                            Scheduled unvested allocation
+
+                        </span>
+
+                        <strong id="oc-locked">
+
+                            950,000,000 CHTC
+
+                        </strong>
+
+                        <span id="oc-locked-percent">
+
+                            95.00%
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="scroll">
+
+                    <table class="oc-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Allocation</th>
+
+                                <th>Scheduled Vested</th>
+
+                                <th>Scheduled Unvested</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="oc-unlock-details">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p class="notice">
+
+                    This chart represents the contractual
+                    vesting schedule, not actual circulating
+                    supply or live released balances.
+
+                    Vested tokens require a release
+                    transaction before being transferred
+                    to their beneficiary.
+
+                    Initial multisig allocations are
+                    not necessarily circulating tokens.
+
+                    Token burns and subsequent transfers
+                    are not reflected in this schedule.
+
+                </p>
+
+            </div>
+
+            <!-- VESTING SCHEDULE -->
+
+            <div class="panel">
+
+                <h3>Vesting Schedule</h3>
+
+                <p>
+
+                    Common vesting start:
+
+                    <strong>
+
+                        November 29, 2026 at 13:30:12
+
+                    </strong>
+
+                    (UTC+7)
+
+                </p>
+
+                <div class="scroll">
+
+                    <table class="oc-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Allocation</th>
+
+                                <th>Initial Vesting</th>
+
+                                <th>Cliff</th>
+
+                                <th>Release Periods</th>
+
+                                <th>First Unlock</th>
+
+                                <th>Final Unlock</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="oc-schedule-table">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p class="small">
+
+                    All dates use 30-day periods
+                    rather than calendar months.
+
+                    Displayed dates use Asia/Bangkok
+                    time (UTC+7).
+
+                </p>
+
+            </div>
+
+            <!-- CONTRACT DIRECTORY -->
+
+            <div class="tag">
+
+                PUBLIC CONTRACT DIRECTORY
+
+            </div>
+
+            <h2>Vesting & Multisig Contracts</h2>
+
+            <p>
+
+                Six vesting contracts and six separate
+                Safe 2-of-3 multisig beneficiary wallets.
+
+                Each contract can be independently
+                inspected through BscScan.
+
+            </p>
+
+            <div id="oc-contract-directory"
+                 class="oc-contract-grid">
+
+            </div>
+
+            <!-- SAFE IMPLEMENTATION -->
+
+            <div class="panel">
+
+                <h3>Safe Multisig Infrastructure</h3>
+
+                <div class="scroll">
+
+                    <table>
+
+                        <tbody>
+
+                            <tr>
+
+                                <th>Safe Version</th>
+
+                                <td>1.4.1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Number of Wallets</th>
+
+                                <td>6</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Owners per Wallet</th>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Required Signatures</th>
+
+                                <td>2 of 3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Network</th>
+
+                                <td>BNB Smart Chain</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p class="small">
+
+                    Safe Singleton Implementation
+
+                </p>
+
+                <code class="address">0x41675C099F32341bf84BFc5382aF534df5C7461a</code>
+
+                <div class="actions">
+
+                    <button class="small-btn"
+                            type="button"
+                            data-copy="0x41675C099F32341bf84BFc5382aF534df5C7461a">
+
+                        Copy Address
+
+                    </button>
+
+                    <a class="small-btn"
+                       href="https://bscscan.com/address/0x41675C099F32341bf84BFc5382aF534df5C7461a#code"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        View Implementation ↗
+
+                    </a>
+
+                </div>
+
+                <p class="small">
+
+                    Safe Proxy Factory
+
+                </p>
+
+                <code class="address">0x4e1DCf7AD4e460CfD30791CCC4F9c8a4f820ec67</code>
+
+                <div class="actions">
+
+                    <button class="small-btn"
+                            type="button"
+                            data-copy="0x4e1DCf7AD4e460CfD30791CCC4F9c8a4f820ec67">
+
+                        Copy Address
+
+                    </button>
+
+                    <a class="small-btn"
+                       href="https://bscscan.com/address/0x4e1DCf7AD4e460CfD30791CCC4F9c8a4f820ec67#code"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        View Factory ↗
+
+                    </a>
+
+                </div>
+
+                <p class="small">
+
+                    Safe Compatibility Fallback Handler
+
+                </p>
+
+                <code class="address">0xfd0732Dc9E303f09fCEf3a7388Ad10A83459Ec99</code>
+
+                <div class="actions">
+
+                    <button class="small-btn"
+                            type="button"
+                            data-copy="0xfd0732Dc9E303f09fCEf3a7388Ad10A83459Ec99">
+
+                        Copy Address
+
+                    </button>
+
+                    <a class="small-btn"
+                       href="https://bscscan.com/address/0xfd0732Dc9E303f09fCEf3a7388Ad10A83459Ec99#code"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        View Handler ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- SECURITY DISCLOSURE -->
+
+            <div class="panel">
+
+                <h3>Security & Verification Disclosure</h3>
+
+                <p>
+
+                    The CHTC token contract has matching
+                    source code published on BscScan.
+
+                    Additional explorer verification
+                    has not been completed independently
+                    for every deployed contract.
+
+                </p>
+
+                <p>
+
+                    Vesting beneficiaries and schedules
+                    are immutable in the deployed
+                    vesting contracts.
+
+                    All six beneficiary wallets use
+                    Safe 1.4.1 with a 2-of-3 signature
+                    threshold.
+
+                </p>
+
+                <p>
+
+                    All six Safe wallets use the same
+                    three owners.
+
+                    Shared-device key storage creates
+                    correlated compromise risk.
+
+                </p>
+
+                <p class="notice">
+
+                    Source code verification is not
+                    a security audit.
+
+                    No independent security audit has
+                    been completed.
+
+                    Vesting allocation is not an LP lock.
+
+                    Public trading has not launched.
+
+                    Dashboard figures are based on the
+                    initial distribution record and
+                    contractual schedule, not live
+                    blockchain balance queries.
+
+                </p>
+
+            </div>
+
+            <p id="oc-copy-status"
+               class="oc-copy-status"
+               role="status"
+               aria-live="polite">
+
+            </p>
+
+        </section>
+
+        <!-- =====================================
+             COMMUNITY
+             ===================================== -->
+
+        <section id="community">
+
+            <div class="tag">
+
+                CONNECT WITH CHITOS
+
+            </div>
+
+            <h2>Join the Chitos Community</h2>
+
+            <p>
+
+                Follow development updates,
+                share ideas and explore the
+                Chitos AI ecosystem.
+
+            </p>
+
+            <div class="grid social">
+
+                <article>
+
+                    <h3>X (Twitter)</h3>
+
+                    <p>
+
+                        Follow official project updates,
+                        announcements and development news.
+
+                    </p>
+
+                    <a class="btn"
+                       href="https://x.com/ChitosCoinAI"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Join X (Twitter)
+
+                    </a>
+
+                </article>
+
+                <article>
+
+                    <h3>Telegram</h3>
+
+                    <p>
+
+                        Connect with the CHTC community
+                        and follow project discussions.
+
+                    </p>
+
+                    <a class="btn"
+                       href="https://t.me/ChitosCoinAI"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Join Telegram
+
+                    </a>
+
+                </article>
+
+                <article>
+
+                    <h3>Discord</h3>
+
+                    <p>
+
+                        Join discussions and explore
+                        AI utility and future
+                        ecosystem development.
+
+                    </p>
+
+                    <a class="btn"
+                       href="https://discord.gg/GyaH9vCHdU"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        Join Discord
+
+                    </a>
+
+                </article>
+
+            </div>
+
+            <p class="notice">
+
+                No public trading or presale.
+
+                Never send funds or disclose wallet
+                credentials to anyone claiming
+                to represent CHTC.
+
+                Always verify the official token
+                contract address.
+
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer>
+
+        <strong>
+
+            CHITOS COIN / CHTC
+
+        </strong>
+
+        <p>
+
+            Mainnet V1.1 — Transparency Edition
+
+            <br>
+
+            November 2026 · BNB Smart Chain
+
+        </p>
+
+        <div class="footer-links">
+
+            <a href="whitepaper.pdf">
+
+                Whitepaper
+
+            </a>
+
+            <a href="#onchain">
+
+                On-Chain Dashboard
+
+            </a>
+
+            <a href="ai/">
+
+                AI Hub
+
+            </a>
+
+            <a href="https://github.com/chinnakornh/chitos-coin"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                GitHub
+
+            </a>
+
+            <a href="https://bscscan.com/token/0x5ab5c557c2eb29fc1c3642b31345049f0dc31208"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                BscScan
+
+            </a>
+
+        </div>
+
+        <p>
+
+            Informational only.
+
+            Nothing on this website constitutes
+            an investment recommendation,
+            offer of securities or promise of returns.
+
+            No exchange affiliation, endorsement
+            or guaranteed listing is claimed.
+
+        </p>
+
+    </footer>
+
+    <!-- =========================================
+         ON-CHAIN TRANSPARENCY JAVASCRIPT
+         ========================================= -->
+
+    <script>
+
+    (function () {
+
+        "use strict";
+
+        // =====================================
+        // 1. MAINNET CONFIGURATION
+        // =====================================
+
+        const VERSION = "1.1.0";
+
+        const CHAIN_ID = 56;
+
+        const TOKEN =
+            "0x5ab5c557c2eb29fc1c3642b31345049f0dc31208";
+
+        const DEPLOYER =
+            "0x78c0E3696Ef1F1f688894D6D979c6E83D10164d6";
+
+        const TOTAL_SUPPLY = 1000000000;
+
+        const INITIAL_DISTRIBUTION = 50000000;
+
+        const TOTAL_VESTING = 950000000;
+
+        const START_TIME = 1795933812;
+
+        const MONTH = 2592000;
+
+        const MAX_PERIOD = 48;
+
+        const UNIT = BigInt("1000000000000000000");
+
+        const ZERO = BigInt(0);
+
+        const BSC = "https://bscscan.com";
+
+        // =====================================
+        // 2. MAINNET CONTRACT MANIFEST
+        // =====================================
+
+        const POOLS = [
+
+            {
+
+                name: "Community & Rewards",
+
+                total: 400000000,
+
+                initial: 10000000,
+
+                locked: 390000000,
+
+                cliff: 0,
+
+                duration: 48,
+
+                vesting:
+                    "0x18a545f86eeab144f7eca2627e1582dee1ab7332",
+
+                safe:
+                    "0x342769262473f589bef2550b000c0615aef9899b",
+
+                fundingTx:
+                    "0xa518766dd76c45e47082afff5d6566784a6efa9e6a0b2ece4cabfd43833945b7",
+
+                initialTx:
+                    "0x03ea66cfe8702a0dee2a4ccc21683023bd6dbd9ed9f23750483d4cc422a0795a"
+
+            },
+
+            {
+
+                name: "Liquidity & Exchange",
+
+                total: 200000000,
+
+                initial: 30000000,
+
+                locked: 170000000,
+
+                cliff: 0,
+
+                duration: 36,
+
+                vesting:
+                    "0xf706229c1c918284cc453b9cbcfa15d3da1bcac8",
+
+                safe:
+                    "0x41c889c86e3030c112cf21d9ecb3846166fe094f",
+
+                fundingTx:
+                    "0x87ad8731032bed2da55ae6e9138c84313c7b3ec17833648f2c91d3fffb19ad54",
+
+                initialTx:
+                    "0x54380f45ac1dd1892d832f3e52b089eda3821378c6f94debb9cdc02120fcd7b7"
+
+            },
+
+            {
+
+                name: "AI Utility Ecosystem",
+
+                total: 150000000,
+
+                initial: 5000000,
+
+                locked: 145000000,
+
+                cliff: 0,
+
+                duration: 48,
+
+                vesting:
+                    "0x7d7722fdaeb8a806530f07a171a3d1bb0f72a4c6",
+
+                safe:
+                    "0x090fdb6202def8f5484f07b53f2b9451379374e4",
+
+                fundingTx:
+                    "0x8bfb8d12a579eecbc70ae1ebc39bf2aa3c897a601cc76a68b77a8c28884695be",
+
+                initialTx:
+                    "0x59bee721676826a8ced33b98bc2fb173c0924eee2c93170970d80fdaebcced0a"
+
+            },
+
+            {
+
+                name: "Founder & Team",
+
+                total: 100000000,
+
+                initial: 0,
+
+                locked: 100000000,
+
+                cliff: 12,
+
+                duration: 36,
+
+                vesting:
+                    "0xd1c3bd4a35826211079e0cd26ee59e4f0ac754e8",
+
+                safe:
+                    "0xd50a0d26ca7986b6b5f7f6e0141cd1b99b3fbbd8",
+
+                fundingTx:
+                    "0x3b8f1397ef68bff4f5ddccdd54e365e2368443e2cd38bc98bf69fa29e9033bb5",
+
+                initialTx: null
+
+            },
+
+            {
+
+                name: "Marketing & Partnership",
+
+                total: 100000000,
+
+                initial: 5000000,
+
+                locked: 95000000,
+
+                cliff: 0,
+
+                duration: 36,
+
+                vesting:
+                    "0x7338da945bd6c53c969ee34cc96d34c10da5252a",
+
+                safe:
+                    "0x6c37df37d76fc9bc5540e53a500036c9fb3d08e8",
+
+                fundingTx:
+                    "0x5a74d1bde030b708e048d839826396e035fd3daaf51af200f4e108ea059d2eb9",
+
+                initialTx: null
+
+            },
+
+            {
+
+                name: "Reserve",
+
+                total: 50000000,
+
+                initial: 0,
+
+                locked: 50000000,
+
+                cliff: 24,
+
+                duration: 24,
+
+                vesting:
+                    "0x29efb18f38eb679d0bc81d0771e11259531c0545",
+
+                safe:
+                    "0xcc5eeb395e4710dccb66cb7db327b919d672dd20",
+
+                fundingTx:
+                    "0xf5a097c62d9f55e008c0a2d8ab2840eb7e2f0d545d72bd04ce5a9ec61aa74b59",
+
+                initialTx: null
+
+            }
+
+        ];
+
+        // =====================================
+        // 3. GENERAL HELPERS
+        // =====================================
+
+        function get(id) {
+
+            return document.getElementById(id);
+
+        }
+
+        function validAddress(address) {
+
+            return typeof address === "string" &&
+                /^0x[a-fA-F0-9]{40}$/.test(address);
+
+        }
+
+        function validHash(hash) {
+
+            return typeof hash === "string" &&
+                /^0x[a-fA-F0-9]{64}$/.test(hash);
+
+        }
+
+        function assert(condition, message) {
+
+            if (!condition) {
+
+                throw new Error(message);
+
+            }
+
+        }
+
+        function format(value) {
+
+            return Number(value).toLocaleString(
+
+                "en-US",
+
+                {
+
+                    maximumFractionDigits: 2
+
+                }
+
+            );
+
+        }
+
+        function formatDate(timestamp) {
+
+            return new Intl.DateTimeFormat(
+
+                "en-GB",
+
+                {
+
+                    day: "2-digit",
+
+                    month: "short",
+
+                    year: "numeric",
+
+                    timeZone: "Asia/Bangkok"
+
+                }
+
+            ).format(
+
+                new Date(timestamp * 1000)
+
+            );
+
+        }
+
+        function toUnits(amount) {
+
+            return BigInt(amount) * UNIT;
+
+        }
+
+        function fromUnits(amount) {
+
+            return Number(amount) / Number(UNIT);
+
+        }
+
+        // =====================================
+        // 4. MANIFEST VALIDATION
+        // =====================================
+
+        function validateManifest() {
+
+            assert(
+
+                CHAIN_ID === 56,
+
+                "Invalid chain ID"
+
+            );
+
+            assert(
+
+                POOLS.length === 6,
+
+                "Invalid pool count"
+
+            );
+
+            assert(
+
+                validAddress(TOKEN),
+
+                "Invalid token address"
+
+            );
+
+            assert(
+
+                validAddress(DEPLOYER),
+
+                "Invalid deployer address"
+
+            );
+
+            const total = POOLS.reduce(
+
+                (sum, pool) => sum + pool.total,
+
+                0
+
+            );
+
+            const locked = POOLS.reduce(
+
+                (sum, pool) => sum + pool.locked,
+
+                0
+
+            );
+
+            const initial = POOLS.reduce(
+
+                (sum, pool) => sum + pool.initial,
+
+                0
+
+            );
+
+            assert(
+
+                total === TOTAL_SUPPLY,
+
+                "Invalid total supply"
+
+            );
+
+            assert(
+
+                locked === TOTAL_VESTING,
+
+                "Invalid vesting allocation"
+
+            );
+
+            assert(
+
+                initial === INITIAL_DISTRIBUTION,
+
+                "Invalid initial allocation"
+
+            );
+
+            assert(
+
+                locked + initial === TOTAL_SUPPLY,
+
+                "Allocation reconciliation failed"
+
+            );
+
+            const addresses = [
+
+                TOKEN,
+
+                ...POOLS.flatMap(
+
+                    pool => [
+
+                        pool.vesting,
+
+                        pool.safe
+
+                    ]
+
+                )
+
+            ];
+
+            assert(
+
+                addresses.every(validAddress),
+
+                "Invalid contract address"
+
+            );
+
+            assert(
+
+                new Set(
+
+                    addresses.map(
+
+                        address => address.toLowerCase()
+
+                    )
+
+                ).size === 13,
+
+                "Duplicate contract address"
+
+            );
+
+            POOLS.forEach(function (pool) {
+
+                assert(
+
+                    Number.isSafeInteger(pool.total) &&
+
+                    Number.isSafeInteger(pool.initial) &&
+
+                    Number.isSafeInteger(pool.locked),
+
+                    "Invalid allocation number: " + pool.name
+
+                );
+
+                assert(
+
+                    pool.total > 0 &&
+
+                    pool.initial >= 0 &&
+
+                    pool.locked > 0,
+
+                    "Invalid allocation amount: " + pool.name
+
+                );
+
+                assert(
+
+                    pool.initial + pool.locked === pool.total,
+
+                    "Allocation mismatch: " + pool.name
+
+                );
+
+                assert(
+
+                    Number.isInteger(pool.cliff) &&
+
+                    Number.isInteger(pool.duration) &&
+
+                    pool.cliff >= 0 &&
+
+                    pool.duration > 0 &&
+
+                    pool.cliff + pool.duration <= MAX_PERIOD,
+
+                    "Invalid vesting schedule: " + pool.name
+
+                );
+
+                assert(
+
+                    validHash(pool.fundingTx),
+
+                    "Invalid funding transaction: " + pool.name
+
+                );
+
+                if (pool.initialTx !== null) {
+
+                    assert(
+
+                        validHash(pool.initialTx),
+
+                        "Invalid distribution transaction: " +
+
+                        pool.name
+
+                    );
+
+                }
+
+            });
+
+            console.info(
+
+                "[CHTC] Static manifest validation: PASS"
+
+            );
+
+        }
+
+        // =====================================
+        // 5. VESTING CALCULATION
+        // Matches ChitosVesting integer math
+        // =====================================
+
+        function vestedAmount(pool, timestamp) {
+
+            const cliffEnd =
+
+                START_TIME + pool.cliff * MONTH;
+
+            const endTime =
+
+                cliffEnd + pool.duration * MONTH;
+
+            const allocation = toUnits(pool.locked);
+
+            if (timestamp < cliffEnd) {
+
+                return ZERO;
+
+            }
+
+            if (timestamp >= endTime) {
+
+                return allocation;
+
+            }
+
+            const elapsedMonths = Math.floor(
+
+                (timestamp - cliffEnd) / MONTH
+
+            );
+
+            return (
+
+                allocation * BigInt(elapsedMonths)
+
+            ) / BigInt(pool.duration);
+
+        }
+
+        function totalVested(period) {
+
+            const timestamp =
+
+                START_TIME + period * MONTH;
+
+            return POOLS.reduce(
+
+                function (sum, pool) {
+
+                    return sum +
+
+                        vestedAmount(pool, timestamp);
+
+                },
+
+                ZERO
+
+            );
+
+        }
+
+        function cumulativeUnlock(period) {
+
+            return fromUnits(
+
+                toUnits(INITIAL_DISTRIBUTION) +
+
+                totalVested(period)
+
+            );
+
+        }
+
+        // =====================================
+        // 6. SCHEDULE BOUNDARY VALIDATION
+        // =====================================
+
+        function validateSchedule() {
+
+            POOLS.forEach(function (pool) {
+
+                const cliffEnd =
+
+                    START_TIME + pool.cliff * MONTH;
+
+                const firstUnlock =
+
+                    cliffEnd + MONTH;
+
+                const endTime =
+
+                    cliffEnd + pool.duration * MONTH;
+
+                assert(
+
+                    vestedAmount(
+
+                        pool,
+
+                        START_TIME - 1
+
+                    ) === ZERO,
+
+                    "Invalid pre-start boundary"
+
+                );
+
+                assert(
+
+                    vestedAmount(
+
+                        pool,
+
+                        cliffEnd
+
+                    ) === ZERO,
+
+                    "Invalid cliff boundary"
+
+                );
+
+                assert(
+
+                    vestedAmount(
+
+                        pool,
+
+                        firstUnlock - 1
+
+                    ) === ZERO,
+
+                    "Early vesting detected"
+
+                );
+
+                assert(
+
+                    vestedAmount(
+
+                        pool,
+
+                        firstUnlock
+
+                    ) ===
+
+                    toUnits(pool.locked) /
+
+                    BigInt(pool.duration),
+
+                    "Invalid first unlock"
+
+                );
+
+                assert(
+
+                    vestedAmount(
+
+                        pool,
+
+                        endTime - 1
+
+                    ) < toUnits(pool.locked),
+
+                    "Invalid pre-end boundary"
+
+                );
+
+                assert(
+
+                    vestedAmount(
+
+                        pool,
+
+                        endTime
+
+                    ) === toUnits(pool.locked),
+
+                    "Invalid final unlock"
+
+                );
+
+                assert(
+
+                    vestedAmount(
+
+                        pool,
+
+                        endTime + MONTH
+
+                    ) === toUnits(pool.locked),
+
+                    "Invalid post-end boundary"
+
+                );
+
+            });
+
+            assert(
+
+                totalVested(0) === ZERO,
+
+                "Invalid initial vested amount"
+
+            );
+
+            assert(
+
+                totalVested(48) === toUnits(TOTAL_VESTING),
+
+                "Invalid final vested amount"
+
+            );
+
+            assert(
+
+                cumulativeUnlock(0) === INITIAL_DISTRIBUTION,
+
+                "Invalid initial chart value"
+
+            );
+
+            assert(
+
+                cumulativeUnlock(48) === TOTAL_SUPPLY,
+
+                "Invalid final chart value"
+
+            );
+
+            let previous = ZERO;
+
+            for (
+
+                let period = 0;
+
+                period <= MAX_PERIOD;
+
+                period++
+
+            ) {
+
+                const current = totalVested(period);
+
+                assert(
+
+                    current >= previous,
+
+                    "Non-monotonic vesting schedule"
+
+                );
+
+                assert(
+
+                    current <= toUnits(TOTAL_VESTING),
+
+                    "Vesting allocation exceeded"
+
+                );
+
+                previous = current;
+
+            }
+
+            console.info(
+
+                "[CHTC] Schedule boundary validation: PASS"
+
+            );
+
+        }
+
+        // =====================================
+        // 7. DISTRIBUTION ALLOCATION BARS
+        // =====================================
+
+        function renderAllocationBars() {
+
+            const container = get(
+
+                "oc-allocation-bars"
+
+            );
+
+            const maxAllocation = Math.max(
+
+                ...POOLS.map(pool => pool.total)
+
+            );
+
+            container.innerHTML = POOLS.map(
+
+                function (pool) {
+
+                    const lockedWidth =
+
+                        pool.locked / maxAllocation * 100;
+
+                    const initialWidth =
+
+                        pool.initial / maxAllocation * 100;
+
+                    return `
+
+                        <div class="oc-allocation-row">
+
+                            <div class="oc-allocation-title">
+
+                                <span>${pool.name}</span>
+
+                                <strong>
+
+                                    ${format(pool.total)} CHTC
+
+                                </strong>
+
+                            </div>
+
+                            <div class="oc-allocation-track"
+                                 role="img"
+                                 aria-label="${pool.name}: ${format(pool.locked)} vesting, ${format(pool.initial)} initial">
+
+                                <div
+                                    class="oc-locked-bar"
+                                    style="width:${lockedWidth}%"
+                                    title="${format(pool.locked)} CHTC vesting allocation">
+
+                                </div>
+
+                                <div
+                                    class="oc-initial-bar"
+                                    style="width:${initialWidth}%"
+                                    title="${format(pool.initial)} CHTC initial allocation">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+
+            ).join("");
+
+        }
+
+        // =====================================
+        // 8. VESTING SCHEDULE TABLE
+        // =====================================
+
+        function renderScheduleTable() {
+
+            get("oc-schedule-table").innerHTML =
+
+                POOLS.map(function (pool) {
+
+                    const firstUnlock =
+
+                        START_TIME +
+
+                        (pool.cliff + 1) * MONTH;
+
+                    const finalUnlock =
+
+                        START_TIME +
+
+                        (pool.cliff + pool.duration) * MONTH;
+
+                    return `
+
+                        <tr>
+
+                            <td>${pool.name}</td>
+
+                            <td>${format(pool.locked)}</td>
+
+                            <td>${pool.cliff}</td>
+
+                            <td>${pool.duration}</td>
+
+                            <td>${formatDate(firstUnlock)}</td>
+
+                            <td>${formatDate(finalUnlock)}</td>
+
+                        </tr>
+
+                    `;
+
+                }).join("");
+
+        }
+
+        // =====================================
+        // 9. CONTRACT DIRECTORY
+        // =====================================
+
+        function renderContractDirectory() {
+
+            get("oc-contract-directory").innerHTML =
+
+                POOLS.map(function (pool) {
+
+                    const initialLink = pool.initialTx
+
+                        ? `
+
+                            <a class="small-btn"
+                               href="${BSC}/tx/${pool.initialTx}"
+                               target="_blank"
+                               rel="noopener noreferrer">
+
+                                Initial Distribution Tx ↗
+
+                            </a>
+
+                        `
+
+                        : pool.initial > 0
+
+                            ? `
+
+                                <a class="small-btn"
+                                   href="${BSC}/token/${TOKEN}?a=${pool.safe}"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+
+                                    Distribution History ↗
+
+                                </a>
+
+                            `
+
+                            : "";
+
+                    return `
+
+                        <article class="oc-contract">
+
+                            <h3>${pool.name}</h3>
+
+                            <div class="oc-amount">
+
+                                ${format(pool.total)} CHTC
+
+                            </div>
+
+                            <div class="small">
+
+                                ${pool.total / TOTAL_SUPPLY * 100}%
+
+                                of initial supply
+
+                            </div>
+
+                            <div class="oc-contract-label">
+
+                                Vesting Contract
+
+                            </div>
+
+                            <p class="small">
+
+                                Initial funding:
+
+                                ${format(pool.locked)} CHTC
+
+                            </p>
+
+                            <code class="address">${pool.vesting}</code>
+
+                            <div class="actions">
+
+                                <button
+                                    class="small-btn"
+                                    type="button"
+                                    data-copy="${pool.vesting}">
+
+                                    Copy Address
+
+                                </button>
+
+                                <a class="small-btn"
+                                   href="${BSC}/address/${pool.vesting}#code"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+
+                                    Contract Code ↗
+
+                                </a>
+
+                                <a class="small-btn"
+                                   href="${BSC}/address/${pool.vesting}#readContract"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+
+                                    Read Contract ↗
+
+                                </a>
+
+                                <a class="small-btn"
+                                   href="${BSC}/tx/${pool.fundingTx}"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+
+                                    Funding Transaction ↗
+
+                                </a>
+
+                                <a class="small-btn"
+                                   href="${BSC}/token/${TOKEN}?a=${pool.vesting}"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+
+                                    Vesting Token Balance ↗
+
+                                </a>
+
+                            </div>
+
+                            <div class="oc-contract-label">
+
+                                Safe Multisig Beneficiary
+
+                            </div>
+
+                            <p class="small">
+
+                                Initial allocation:
+
+                                ${format(pool.initial)} CHTC
+
+                            </p>
+
+                            <code class="address">${pool.safe}</code>
+
+                            <div class="actions">
+
+                                <button
+                                    class="small-btn"
+                                    type="button"
+                                    data-copy="${pool.safe}">
+
+                                    Copy Address
+
+                                </button>
+
+                                <a class="small-btn"
+                                   href="${BSC}/address/${pool.safe}"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+
+                                    View Safe ↗
+
+                                </a>
+
+                                <a class="small-btn"
+                                   href="${BSC}/token/${TOKEN}?a=${pool.safe}"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+
+                                    Safe Token Balance ↗
+
+                                </a>
+
+                                ${initialLink}
+
+                            </div>
+
+                            <p class="small">
+
+                                Safe 1.4.1 · 2-of-3 multisig
+
+                            </p>
+
+                            <p class="small">
+
+                                Cliff: ${pool.cliff} periods
+
+                                · Release: ${pool.duration} periods
+
+                            </p>
+
+                        </article>
+
+                    `;
+
+                }).join("");
+
+        }
+
+        // =====================================
+        // 10. SVG VESTING CHART
+        // =====================================
+
+        function renderChart(selectedPeriod) {
+
+            const svg = get("oc-unlock-chart");
+
+            const left = 76;
+
+            const right = 870;
+
+            const top = 24;
+
+            const bottom = 288;
+
+            const width = right - left;
+
+            const height = bottom - top;
+
+            function x(period) {
+
+                return left +
+
+                    period / MAX_PERIOD * width;
+
+            }
+
+            function y(amount) {
+
+                return bottom -
+
+                    amount / TOTAL_SUPPLY * height;
+
+            }
+
+            let grid = "";
+
+            [0, 250, 500, 750, 1000].forEach(
+
+                function (million) {
+
+                    const position = y(
+
+                        million * 1000000
+
+                    );
+
+                    grid += `
+
+                        <line
+
+                            x1="${left}"
+
+                            y1="${position}"
+
+                            x2="${right}"
+
+                            y2="${position}"
+
+                            stroke="#2a3c51"
+
+                            stroke-width="1"
+
+                        />
+
+                        <text
+
+                            x="${left - 12}"
+
+                            y="${position + 5}"
+
+                            text-anchor="end"
+
+                            font-size="13"
+
+                            fill="#a9b9cc">
+
+                            ${million}M
+
+                        </text>
+
+                    `;
+
+                }
+
+            );
+
+            [0, 12, 24, 36, 48].forEach(
+
+                function (period) {
+
+                    grid += `
+
+                        <text
+
+                            x="${x(period)}"
+
+                            y="${bottom + 25}"
+
+                            text-anchor="middle"
+
+                            font-size="13"
+
+                            fill="#a9b9cc">
+
+                            ${period}
+
+                        </text>
+
+                    `;
+
+                }
+
+            );
+
+            // Discrete 30-day vesting step chart.
+
+            let line =
+
+                `M ${x(0)} ${y(cumulativeUnlock(0))}`;
+
+            for (
+
+                let period = 1;
+
+                period <= MAX_PERIOD;
+
+                period++
+
+            ) {
+
+                line +=
+
+                    ` H ${x(period)}` +
+
+                    ` V ${y(cumulativeUnlock(period))}`;
+
+            }
+
+            const area =
+
+                line +
+
+                ` L ${right} ${bottom}` +
+
+                ` L ${left} ${bottom} Z`;
+
+            const selectedX = x(selectedPeriod);
+
+            const selectedY = y(
+
+                cumulativeUnlock(selectedPeriod)
+
+            );
+
+            svg.innerHTML = `
+
+                <defs>
+
+                    <linearGradient
+
+                        id="oc-chart-gradient"
+
+                        x1="0"
+
+                        y1="0"
+
+                        x2="0"
+
+                        y2="1">
+
+                        <stop
+
+                            offset="0%"
+
+                            stop-color="#319e8e"
+
+                            stop-opacity=".38"
+
+                        />
+
+                        <stop
+
+                            offset="100%"
+
+                            stop-color="#319e8e"
+
+                            stop-opacity=".03"
+
+                        />
+
+                    </linearGradient>
+
+                </defs>
+
+                ${grid}
+
+                <path
+
+                    d="${area}"
+
+                    fill="url(#oc-chart-gradient)"
+
+                />
+
+                <path
+
+                    d="${line}"
+
+                    fill="none"
+
+                    stroke="#8ce8d5"
+
+                    stroke-width="3"
+
+                    stroke-linejoin="round"
+
+                />
+
+                <line
+
+                    x1="${selectedX}"
+
+                    y1="${top}"
+
+                    x2="${selectedX}"
+
+                    y2="${bottom}"
+
+                    stroke="#e9b86b"
+
+                    stroke-dasharray="6 5"
+
+                    stroke-width="1.5"
+
+                />
+
+                <circle
+
+                    cx="${selectedX}"
+
+                    cy="${selectedY}"
+
+                    r="6"
+
+                    fill="#e9b86b"
+
+                    stroke="#091321"
+
+                    stroke-width="2"
+
+                />
+
+                <text
+
+                    x="470"
+
+                    y="334"
+
+                    text-anchor="middle"
+
+                    font-size="13"
+
+                    fill="#a9b9cc">
+
+                    Vesting periods (30 days each)
+
+                </text>
+
+            `;
+
+        }
+
+        // =====================================
+        // 11. INTERACTIVE UNLOCK CALCULATOR
+        // =====================================
+
+        function updateUnlock(period) {
+
+            period = Number(period);
+
+            if (!Number.isFinite(period)) {
+
+                period = 0;
+
+            }
+
+            period = Math.max(
+
+                0,
+
+                Math.min(
+
+                    MAX_PERIOD,
+
+                    Math.floor(period)
+
+                )
+
+            );
+
+            const timestamp =
+
+                START_TIME + period * MONTH;
+
+            const vested = totalVested(period);
+
+            const unlocked = fromUnits(
+
+                toUnits(INITIAL_DISTRIBUTION) + vested
+
+            );
+
+            const locked = fromUnits(
+
+                toUnits(TOTAL_VESTING) - vested
+
+            );
+
+            get("oc-selected-month").textContent =
+
+                period;
+
+            get("oc-selected-date").textContent =
+
+                "Schedule date: " +
+
+                formatDate(timestamp) +
+
+                " · 13:30:12 (UTC+7)";
+
+            get("oc-unlocked").textContent =
+
+                format(unlocked) + " CHTC";
+
+            get("oc-locked").textContent =
+
+                format(locked) + " CHTC";
+
+            get("oc-unlocked-percent").textContent =
+
+                (unlocked / TOTAL_SUPPLY * 100)
+
+                    .toFixed(2) + "%";
+
+            get("oc-locked-percent").textContent =
+
+                (locked / TOTAL_SUPPLY * 100)
+
+                    .toFixed(2) + "%";
+
+            get("oc-unlock-details").innerHTML =
+
+                POOLS.map(function (pool) {
+
+                    const amount =
+
+                        vestedAmount(pool, timestamp);
+
+                    const remaining =
+
+                        toUnits(pool.locked) - amount;
+
+                    return `
+
+                        <tr>
+
+                            <td>${pool.name}</td>
+
+                            <td>
+
+                                ${format(fromUnits(amount))}
+
+                            </td>
+
+                            <td>
+
+                                ${format(fromUnits(remaining))}
+
+                            </td>
+
+                        </tr>
+
+                    `;
+
+                }).join("");
+
+            renderChart(period);
+
+        }
+
+        // =====================================
+        // 12. COPY CONTRACT ADDRESS
+        // =====================================
+
+        async function copyAddress(address, button) {
+
+            if (!validAddress(address)) {
+
+                return;
+
+            }
+
+            const status = get("oc-copy-status");
+
+            const originalLabel = button.textContent;
+
+            try {
+
+                if (
+
+                    !navigator.clipboard ||
+
+                    !window.isSecureContext
+
+                ) {
+
+                    throw new Error(
+
+                        "Clipboard unavailable"
+
+                    );
+
+                }
+
+                await navigator.clipboard.writeText(
+
+                    address
+
+                );
+
+                button.textContent = "Copied!";
+
+                if (status) {
+
+                    status.textContent =
+
+                        "Contract address copied: " +
+
+                        address;
+
+                }
+
+                window.setTimeout(
+
+                    function () {
+
+                        button.textContent = originalLabel;
+
+                    },
+
+                    1800
+
+                );
+
+            } catch (error) {
+
+                button.textContent = "Copy manually";
+
+                if (status) {
+
+                    status.textContent =
+
+                        "Automatic copy unavailable. " +
+
+                        "Select and copy the displayed " +
+
+                        "address manually.";
+
+                }
+
+                window.setTimeout(
+
+                    function () {
+
+                        button.textContent = originalLabel;
+
+                    },
+
+                    2500
+
+                );
+
+                console.warn(
+
+                    "[CHTC] Clipboard unavailable",
+
+                    error
+
+                );
+
+            }
+
+        }
+
+        // =====================================
+        // 13. INITIALIZATION
+        // =====================================
+
+        function init() {
+
+            console.info(
+
+                "[CHTC] Mainnet Dashboard V" +
+
+                VERSION +
+
+                " initializing"
+
+            );
+
+            // Global copy button support.
+
+            document.addEventListener(
+
+                "click",
+
+                function (event) {
+
+                    if (!(event.target instanceof Element)) {
+
+                        return;
+
+                    }
+
+                    const button = event.target.closest(
+
+                        "[data-copy]"
+
+                    );
+
+                    if (!button) {
+
+                        return;
+
+                    }
+
+                    copyAddress(
+
+                        button.dataset.copy,
+
+                        button
+
+                    );
+
+                }
+
+            );
+
+            try {
+
+                validateManifest();
+
+                validateSchedule();
+
+                renderAllocationBars();
+
+                renderScheduleTable();
+
+                renderContractDirectory();
+
+                updateUnlock(0);
+
+                get("oc-month-slider").addEventListener(
+
+                    "input",
+
+                    function (event) {
+
+                        updateUnlock(event.target.value);
+
+                    }
+
+                );
+
+                console.info(
+
+                    "[CHTC] Transparency Dashboard READY"
+
+                );
+
+                console.info(
+
+                    "[CHTC] Data mode: STATIC MAINNET MANIFEST"
+
+                );
+
+                console.info(
+
+                    "[CHTC] Initial supply: " +
+
+                    format(TOTAL_SUPPLY)
+
+                );
+
+                console.info(
+
+                    "[CHTC] Initial vesting: " +
+
+                    format(TOTAL_VESTING)
+
+                );
+
+                console.info(
+
+                    "[CHTC] Initial multisig allocation: " +
+
+                    format(INITIAL_DISTRIBUTION)
+
+                );
+
+                console.info(
+
+                    "[CHTC] Contract directory: 12 contracts"
+
+                );
+
+                console.info(
+
+                    "[CHTC] Wallet connection: NOT REQUIRED"
+
+                );
+
+                console.info(
+
+                    "[CHTC] Blockchain transactions: NONE"
+
+                );
+
+            } catch (error) {
+
+                console.error(
+
+                    "[CHTC] Dashboard initialization failed",
+
+                    error
+
+                );
+
+                const errorBox = get(
+
+                    "oc-dashboard-error"
+
+                );
+
+                if (errorBox) {
+
+                    errorBox.hidden = false;
+
+                    errorBox.textContent =
+
+                        "Interactive dashboard unavailable. " +
+
+                        "Please inspect the official " +
+
+                        "contracts directly on BscScan.";
+
+                }
+
+                [
+
+                    "oc-allocation-bars",
+
+                    "oc-unlock-chart",
+
+                    "oc-unlock-details",
+
+                    "oc-schedule-table",
+
+                    "oc-contract-directory"
+
+                ].forEach(function (id) {
+
+                    const element = get(id);
+
+                    if (element) {
+
+                        element.replaceChildren();
+
+                    }
+
+                });
+
+                const slider = get("oc-month-slider");
+
+                if (slider) {
+
+                    slider.disabled = true;
+
+                }
+
+            }
+
+        }
+
+        // =====================================
+        // 14. START DASHBOARD
+        // =====================================
+
+        if (document.readyState === "loading") {
+
+            document.addEventListener(
+
+                "DOMContentLoaded",
+
+                init,
+
+                { once: true }
+
+            );
+
+        } else {
+
+            init();
+
+        }
+
+    })();
+
+    </script>
 
 </body>
+
 </html>
